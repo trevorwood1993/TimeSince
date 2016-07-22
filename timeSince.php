@@ -36,7 +36,7 @@ function timeSince($since,$switchArray,$highestValueOnly) {
 		$since = $since - ($data[$value]*$secondAmount);
 
 		if($data[$value] >= 1){
-			$dataText .= $data[$value]." ".$value;
+			$dataText .= number_format($data[$value])." ".$value;
 			if($data[$value] >= 2){
 				$dataText .= 's';
 			}
