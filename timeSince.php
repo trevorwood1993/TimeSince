@@ -22,13 +22,13 @@ function timeSince($since,$switchArray,$highestValueOnly) {
 
 	foreach ($switchArray as $value) {
 		switch ($value) {
-			case 'second': $secondAmount = $secondsInSecond;	break;
-			case 'minute': $secondAmount = $secondsInMinute;	break;
-			case 'hour': $secondAmount = $secondsInHour;	break;
-			case 'day': $secondAmount = $secondsInDay;	break;
-			case 'week': $secondAmount = $secondsInWeek;	break;
-			case 'month': $secondAmount = $secondsInMonth;	break;
-			case 'year': $secondAmount = $secondsInYear;	break;
+			case 'second': $secondAmount = $secondsInSecond; break;
+			case 'minute': $secondAmount = $secondsInMinute; break;
+			case 'hour': $secondAmount = $secondsInHour; break;
+			case 'day': $secondAmount = $secondsInDay; break;
+			case 'week': $secondAmount = $secondsInWeek; break;
+			case 'month': $secondAmount = $secondsInMonth; break;
+			case 'year': $secondAmount = $secondsInYear; break;
 			default: echo 'secondAmount not found. Break'; break;
 		}
 
