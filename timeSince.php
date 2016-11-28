@@ -32,6 +32,7 @@ function timeSince($since,$switchArray,$highestValueOnly) {
 			default: echo 'secondAmount not found. Break'; break;
 		}
 
+		//This is really the core of the code, the rest is just preparing
 		$data[$value] = floor($since/$secondAmount);
 		$since = $since - ($data[$value]*$secondAmount);
 
