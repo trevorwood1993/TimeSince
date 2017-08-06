@@ -1,14 +1,19 @@
+<?php
+
 // switchArray should contain which values you want returned. 
 // i.e.
 // If you only want months and days
 // then load an array like this
 // $switchArray = array('month','day'); 
 
-function timeSince($since,$switchArray,$highestValueOnly) {
+// highestValueLimit determines how many values you want back
+// if you just want the highest, or the highest 2 or highest 3
+
+function timeSince($since,$switchArray,$highestValueLimit) {
 	// $since = seconds
 	// $switchArray = values to return...in correct order
-	// $highestValueOnly // 0,undefined off // 1 = on
-		
+	// $highestValueOnly // 0,undefined off // 1+ = on
+
 	$secondsInYear 		= 31536000;//365 days
 	$secondsInMonth 	= 2592000;//30 days
 	$secondsInWeek 		= 604800;//7 days
@@ -20,7 +25,13 @@ function timeSince($since,$switchArray,$highestValueOnly) {
 	if($switchArray == "" || $switchArray == 0){
 		// Will auto load this array if switchArray is empty
 		$switchArray = array('year','month','week','day','hour','minute','second'); 
-	}				
+	}		
+
+
+	if($highestValueLimit == 0 || $highestValueLimit == ""){
+		$highestValueLimit = count($switchArray);
+	}
+
 
 	$lastItemInArray = end($switchArray);
 	$data = array();
@@ -47,9 +58,10 @@ function timeSince($since,$switchArray,$highestValueOnly) {
 			if($data[$value] >= 2){
 				$dataText .= 's';
 			}
-			if($highestValueOnly == 1){
+			if($highestValueLimit == 1){
 				break;
 			}	
+			$highestValueLimit--;
 			if($value != $lastItemInArray && $since != 0){
 				$dataText .= ', ';
 			}
