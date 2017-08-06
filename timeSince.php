@@ -1,3 +1,9 @@
+// switchArray should contain which values you want returned. 
+// i.e.
+// If you only want months and days
+// then load an array like this
+// $switchArray = array('month','day'); 
+
 function timeSince($since,$switchArray,$highestValueOnly) {
 	// $since = seconds
 	// $switchArray = values to return...in correct order
